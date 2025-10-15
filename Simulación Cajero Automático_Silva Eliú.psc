@@ -1,7 +1,7 @@
 Algoritmo Cajero_Electronico
     Definir usuario, contrasena Como Cadena
     Definir usuarioCorrecto, contrasenaCorrecta Como Cadena
-    Definir intentos, opcion, opcionPago, subopcion, opcionLicencia Como Entero
+    Definir intentos, opcion, opcionPago, subopcion, opcionLicencia, cred Como Entero
     Definir saldo, monto Como Real
    
 	
@@ -12,7 +12,11 @@ Algoritmo Cajero_Electronico
     autenticado <- Falso
 	
     // --- ACCESO ---
-    Repetir
+    Escribir ""
+	Escribir "PROGRAMA REALIZADO POR SILVA MIRANDA ELIU DANIEL"
+	Escribir ""
+	
+	Repetir
         Escribir ""
         Escribir "=== ACCESO AL CAJERO ==="
         Escribir "Ingrese usuario: "
@@ -33,7 +37,7 @@ Algoritmo Cajero_Electronico
         FinSi
     Hasta Que autenticado = Verdadero O intentos = 3
 	
-    // --- SI AUTENTICADO: ejecutar menú (TODO dentro de este Si) ---
+    // --- SI AUTENTICADO: ejecutar menÃº (TODO dentro de este Si) ---
     Si autenticado Entonces
         Repetir
             Escribir ""
@@ -86,7 +90,7 @@ Algoritmo Cajero_Electronico
                     Leer opcionPago
 					
                     Segun opcionPago Hacer
-                        Caso 1: // Tesorería
+                        Caso 1: // TesorerÃ­a
                             Escribir ""
                             Escribir "1. Luz"
                             Escribir "2. Agua"
@@ -154,7 +158,7 @@ Algoritmo Cajero_Electronico
                             FinSi
 							
 							
-                        Caso 2: // Telefonía
+                        Caso 2: // TelefonÃ­a
                             Escribir ""
                             Escribir "1. Telmex"
                             Escribir "2. AT&T Mexico"
@@ -234,6 +238,16 @@ Algoritmo Cajero_Electronico
 					
                 Caso 4:
                     Escribir ""
+					Escribir "---TARJETAS A PAGAR---"
+					Escribir "1. Banamex"
+					Escribir "2. Bancomer"
+					Escribir "3. American Express"
+					Escribir "4. Banorte"
+					Escribir "5. Santander"
+					Escribir "6. Banco Azteca"
+					Escribir "7. Inbursa"
+					Escribir "Selecione una opcion: "
+					Leer cred
                     Escribir "Ingrese monto a pagar de tarjeta de credito: $"
                     Leer monto
                     Si monto <= saldo Entonces
